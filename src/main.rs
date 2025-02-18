@@ -1,11 +1,15 @@
 mod data;
 
 use crate::data::{Status, StatusesPage};
-use reqwest::{header, Client};
+use reqwest::{header, Body, Client, Response};
+use serde_json::Value;
 use std::env;
 use std::time::Duration;
+use tokio::fs;
 
 const STATUSES_URL: &str = "https://traewelling.de/api/v1/user/freya/statuses";
+/// The path takes a comma-separated list of status IDs
+const POLYLINE_URL: &str = "https://traewelling.de/api/v1/polyline/";
 
 #[tokio::main]
 async fn main() {
@@ -24,8 +28,14 @@ async fn main() {
         .into_iter()
         .filter(filter_status)
         .collect();
-    
+
     println!("Filtered to {} statuses", statuses.len());
+    let data = get_polylines(&client, &statuses).await;
+
+    fs::write("data.json", serde_json::to_string(&data).unwrap())
+        .await
+        .expect("Unable to write file");
+    println!("Wrote data.json");
 }
 
 async fn get_statuses(client: &Client) -> Vec<Status> {
@@ -39,23 +49,8 @@ async fn get_statuses(client: &Client) -> Vec<Status> {
             .await
             .expect("Could not send request");
 
-        if response.status() == 429 {
-            match response.headers().get(header::RETRY_AFTER) {
-                None => {
-                    panic!("Got 429, but no retry-after header");
-                }
-                Some(value) => {
-                    let seconds = value
-                        .to_str()
-                        .unwrap()
-                        .parse::<u64>()
-                        .expect("Failed to parse retry-after header");
-                    tokio::time::sleep(Duration::from_secs(seconds)).await;
-                    continue;
-                }
-            }
-        } else if response.status() != 200 {
-            panic!("Unexpected status: {}", response.status());
+        if (!handle_status(&response).await) {
+            continue;
         }
 
         let body = response
@@ -97,5 +92,54 @@ fn filter_status(status: &Status) -> bool {
             println!("Got unexpected category in status {:?}", status);
             true
         }
+    }
+}
+
+async fn get_polylines(client: &Client, statuses: &Vec<Status>) -> Value {
+    let id_strings: Vec<String> = statuses.iter().map(|s| s.id.to_string()).collect();
+    let url = format!("{}{}", POLYLINE_URL, id_strings.join(","));
+
+    async fn try_get_lines(client: &Client, url: String) -> String {
+        loop {
+            let response = client
+                .get(url.clone())
+                .send()
+                .await
+                .expect("Could not send request");
+
+            if (!handle_status(&response).await) {
+                continue;
+            }
+
+            return response
+                .text()
+                .await
+                .expect("Could not decode response body");
+        }
+    }
+
+    serde_json::from_str(&try_get_lines(client, url).await).expect("Failed to parse polyline json")
+}
+
+async fn handle_status(response: &Response) -> bool {
+    if response.status() == 429 {
+        match response.headers().get(header::RETRY_AFTER) {
+            None => {
+                panic!("Got 429, but no retry-after header");
+            }
+            Some(value) => {
+                let seconds = value
+                    .to_str()
+                    .unwrap()
+                    .parse::<u64>()
+                    .expect("Failed to parse retry-after header");
+                tokio::time::sleep(Duration::from_secs(seconds)).await;
+            }
+        }
+        false
+    } else if response.status() != 200 {
+        panic!("Unexpected status: {}", response.status());
+    } else {
+        true
     }
 }
