@@ -16,7 +16,7 @@ pub struct Status {
 /// This is a misnomer, it also covers other modes of transport
 #[derive(Deserialize, Debug)]
 pub struct Train {
-    category: String,
+    pub category: String,
 }
 
 #[derive(Deserialize, Debug)]
