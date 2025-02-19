@@ -24,6 +24,6 @@ async fn get_polyline(client: &Client, status: &Status) -> Value {
             .await
             .expect("Could not decode response body");
 
-        return serde_json::from_str(&json).expect("Failed to parse polyline json");
+        return serde_json::from_str(&json).expect(format!("Failed to parse polyline json:\n{}", json).as_str());
     }
 }

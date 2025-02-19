@@ -28,6 +28,7 @@ pub async fn handle_request(request: RequestBuilder) -> Response {
                     tokio::time::sleep(Duration::from_secs(seconds)).await;
                 }
             }
+            continue
         } else if response.status() != 200 {
             panic!("Unexpected status: {}", response.status());
         }
