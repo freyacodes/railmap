@@ -4,7 +4,6 @@ use crate::data::{Status, StatusesPage};
 use reqwest::{header, Client, Response};
 use serde_json::Value;
 use std::env;
-use std::fmt::format;
 use std::path::Path;
 use std::time::Duration;
 use tokio::fs;
