@@ -4,6 +4,7 @@ use crate::data::{Status, StatusesPage};
 use reqwest::{header, Client, Response};
 use serde_json::Value;
 use std::env;
+use std::path::Path;
 use std::time::Duration;
 use tokio::fs;
 
@@ -13,6 +14,8 @@ const POLYLINE_URL: &str = "https://traewelling.de/api/v1/polyline/";
 
 #[tokio::main]
 async fn main() {
+    fs::remove_dir_all("out").await.unwrap();
+    
     let bearer = env::var("TRAEWELLING_BEARER_TOKEN")
         .expect("Expected `TRAEWELLING_BEARER_TOKEN` env variable");
 
@@ -31,11 +34,13 @@ async fn main() {
 
     println!("Filtered to {} statuses", statuses.len());
     let data = get_polylines(&client, &statuses).await;
-
-    fs::write("data.json", serde_json::to_string(&data).unwrap())
+    let data_str = serde_json::to_string(&data).unwrap();
+    fs::write("polylines.json", data_str.clone())
         .await
         .expect("Unable to write file");
-    println!("Wrote data.json");
+    println!("Wrote polylines.json");
+
+    build_html(data_str.as_str()).await;
 }
 
 async fn get_statuses(client: &Client) -> Vec<Status> {
@@ -49,7 +54,7 @@ async fn get_statuses(client: &Client) -> Vec<Status> {
             .await
             .expect("Could not send request");
 
-        if (!handle_status(&response).await) {
+        if !handle_status(&response).await {
             continue;
         }
 
@@ -113,7 +118,7 @@ async fn get_polyline(client: &Client, status: &Status) -> Value {
             .await
             .expect("Could not send request");
 
-        if (!handle_status(&response).await) {
+        if !handle_status(&response).await {
             continue;
         }
 
@@ -124,6 +129,13 @@ async fn get_polyline(client: &Client, status: &Status) -> Value {
 
         return serde_json::from_str(&json).expect("Failed to parse polyline json")
     }
+}
+
+async fn build_html(polylines: &str) {
+    let mut html = fs::read_to_string("template.html").await.unwrap();
+    html = html.replace("GEOMETRY_PLACEHOLDER", polylines);
+    fs::create_dir_all(Path::new("out")).await.unwrap();
+    fs::write(Path::new("out/index.html"), html).await.unwrap();
 }
 
 async fn handle_status(response: &Response) -> bool {
