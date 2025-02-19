@@ -1,7 +1,7 @@
 mod data;
 
 use crate::data::{Status, StatusesPage};
-use reqwest::{header, Client, Response};
+use reqwest::{header, Client, RequestBuilder, Response};
 use serde_json::Value;
 use std::env;
 use std::path::Path;
@@ -18,7 +18,7 @@ async fn main() {
     if fs::try_exists(OUT_DIR).await.unwrap_or(false) {
         fs::remove_dir_all(OUT_DIR).await.unwrap();
     }
-    
+
     let bearer = env::var("TRAEWELLING_BEARER_TOKEN")
         .expect("Expected `TRAEWELLING_BEARER_TOKEN` env variable");
 
@@ -51,15 +51,7 @@ async fn get_statuses(client: &Client) -> Vec<Status> {
     let mut next_url: String = STATUSES_URL.to_string();
 
     loop {
-        let response = client
-            .get(next_url.clone())
-            .send()
-            .await
-            .expect("Could not send request");
-
-        if !handle_status(&response).await {
-            continue;
-        }
+        let response = handle_request(client.get(next_url.clone())).await;
 
         let body = response
             .text()
@@ -108,29 +100,21 @@ async fn get_polylines(client: &Client, statuses: &Vec<Status>) -> Vec<Value> {
     for (i, status) in statuses.iter().enumerate() {
         let data = get_polyline(client, &status).await["data"].take();
         lines.push(data);
-        println!("Fetched polyline {:04} out of {}", i+1, statuses.len());
+        println!("Fetched polyline {:04} out of {}", i + 1, statuses.len());
     }
     lines
 }
 
 async fn get_polyline(client: &Client, status: &Status) -> Value {
     loop {
-        let response = client
-            .get(format!("{}{}", POLYLINE_URL, status.id))
-            .send()
-            .await
-            .expect("Could not send request");
-
-        if !handle_status(&response).await {
-            continue;
-        }
+        let response = handle_request(client.get(format!("{}{}", POLYLINE_URL, status.id))).await;
 
         let json = response
             .text()
             .await
             .expect("Could not decode response body");
 
-        return serde_json::from_str(&json).expect("Failed to parse polyline json")
+        return serde_json::from_str(&json).expect("Failed to parse polyline json");
     }
 }
 
@@ -138,29 +122,44 @@ async fn build_html(polylines: &str) {
     let mut html = fs::read_to_string("template.html").await.unwrap();
     html = html.replace("GEOMETRY_PLACEHOLDER", polylines);
     fs::create_dir_all(Path::new(OUT_DIR)).await.unwrap();
-    fs::write(Path::new(&format!("{}/index.html", OUT_DIR)), html).await.unwrap();
+    fs::write(Path::new(&format!("{}/index.html", OUT_DIR)), html)
+        .await
+        .unwrap();
 }
 
-async fn handle_status(response: &Response) -> bool {
-    if response.status() == 429 {
-        match response.headers().get(header::RETRY_AFTER) {
-            None => {
-                panic!("Got 429, but no retry-after header");
+async fn handle_request(request: RequestBuilder) -> Response {
+    let max_attempts = 3;
+    for attempt in 1..=max_attempts {
+        let response = match request.try_clone().unwrap().send().await {
+            Ok(r) => r,
+            Err(error) => {
+                println!("Error during request after attempt {}/{}: {}", attempt, max_attempts, error);
+                tokio::time::sleep(Duration::from_secs(1)).await;
+                continue
             }
-            Some(value) => {
-                let seconds = value
-                    .to_str()
-                    .unwrap()
-                    .parse::<u64>()
-                    .expect("Failed to parse retry-after header");
-                println!("Ratelimited, waiting {} seconds", seconds);
-                tokio::time::sleep(Duration::from_secs(seconds)).await;
+        };
+
+        if response.status() == 429 {
+            match response.headers().get(header::RETRY_AFTER) {
+                None => {
+                    panic!("Got 429, but no retry-after header");
+                }
+                Some(value) => {
+                    let seconds = value
+                        .to_str()
+                        .unwrap()
+                        .parse::<u64>()
+                        .expect("Failed to parse retry-after header");
+                    println!("Ratelimited, waiting {} seconds", seconds);
+                    tokio::time::sleep(Duration::from_secs(seconds)).await;
+                }
             }
+        } else if response.status() != 200 {
+            panic!("Unexpected status: {}", response.status());
         }
-        false
-    } else if response.status() != 200 {
-        panic!("Unexpected status: {}", response.status());
-    } else {
-        true
+
+        return response
     }
+   
+    panic!("Failed after {} attempts", max_attempts) 
 }
