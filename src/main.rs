@@ -1,7 +1,7 @@
 mod data;
 
 use crate::data::{Status, StatusesPage};
-use reqwest::{header, Body, Client, Response};
+use reqwest::{header, Client, Response};
 use serde_json::Value;
 use std::env;
 use std::time::Duration;
@@ -95,30 +95,35 @@ fn filter_status(status: &Status) -> bool {
     }
 }
 
-async fn get_polylines(client: &Client, statuses: &Vec<Status>) -> Value {
-    let id_strings: Vec<String> = statuses.iter().map(|s| s.id.to_string()).collect();
-    let url = format!("{}{}", POLYLINE_URL, id_strings.join(","));
-
-    async fn try_get_lines(client: &Client, url: String) -> String {
-        loop {
-            let response = client
-                .get(url.clone())
-                .send()
-                .await
-                .expect("Could not send request");
-
-            if (!handle_status(&response).await) {
-                continue;
-            }
-
-            return response
-                .text()
-                .await
-                .expect("Could not decode response body");
-        }
+async fn get_polylines(client: &Client, statuses: &Vec<Status>) -> Vec<Value> {
+    let mut lines: Vec<Value> = Vec::new();
+    for (i, status) in statuses.iter().enumerate() {
+        let data = get_polyline(client, &status).await["data"].take();
+        lines.push(data);
+        println!("Fetched polyline {:04} out of {}", i+1, statuses.len());
     }
+    lines
+}
 
-    serde_json::from_str(&try_get_lines(client, url).await).expect("Failed to parse polyline json")
+async fn get_polyline(client: &Client, status: &Status) -> Value {
+    loop {
+        let response = client
+            .get(format!("{}{}", POLYLINE_URL, status.id))
+            .send()
+            .await
+            .expect("Could not send request");
+
+        if (!handle_status(&response).await) {
+            continue;
+        }
+
+        let json = response
+            .text()
+            .await
+            .expect("Could not decode response body");
+
+        return serde_json::from_str(&json).expect("Failed to parse polyline json")
+    }
 }
 
 async fn handle_status(response: &Response) -> bool {
@@ -133,6 +138,7 @@ async fn handle_status(response: &Response) -> bool {
                     .unwrap()
                     .parse::<u64>()
                     .expect("Failed to parse retry-after header");
+                println!("Ratelimited, waiting {} seconds", seconds);
                 tokio::time::sleep(Duration::from_secs(seconds)).await;
             }
         }
