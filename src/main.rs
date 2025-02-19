@@ -4,6 +4,7 @@ use crate::data::{Status, StatusesPage};
 use reqwest::{header, Client, Response};
 use serde_json::Value;
 use std::env;
+use std::fmt::format;
 use std::path::Path;
 use std::time::Duration;
 use tokio::fs;
@@ -11,10 +12,13 @@ use tokio::fs;
 const STATUSES_URL: &str = "https://traewelling.de/api/v1/user/freya/statuses";
 /// The path takes a comma-separated list of status IDs
 const POLYLINE_URL: &str = "https://traewelling.de/api/v1/polyline/";
+const OUT_DIR: &str = "out";
 
 #[tokio::main]
 async fn main() {
-    fs::remove_dir_all("out").await.unwrap();
+    if fs::try_exists(OUT_DIR).await.unwrap_or(false) {
+        fs::remove_dir_all(OUT_DIR).await.unwrap();
+    }
     
     let bearer = env::var("TRAEWELLING_BEARER_TOKEN")
         .expect("Expected `TRAEWELLING_BEARER_TOKEN` env variable");
@@ -134,8 +138,8 @@ async fn get_polyline(client: &Client, status: &Status) -> Value {
 async fn build_html(polylines: &str) {
     let mut html = fs::read_to_string("template.html").await.unwrap();
     html = html.replace("GEOMETRY_PLACEHOLDER", polylines);
-    fs::create_dir_all(Path::new("out")).await.unwrap();
-    fs::write(Path::new("out/index.html"), html).await.unwrap();
+    fs::create_dir_all(Path::new(OUT_DIR)).await.unwrap();
+    fs::write(Path::new(&format!("{}/index.html", OUT_DIR)), html).await.unwrap();
 }
 
 async fn handle_status(response: &Response) -> bool {
