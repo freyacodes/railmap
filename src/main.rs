@@ -1,46 +1,33 @@
-mod status;
-mod polyline;
-mod http;
+mod config;
+mod traewelling;
 
-use reqwest::{header, Client};
-use std::env;
+use crate::config::load_config;
 use std::path::Path;
 use tokio::fs;
-use status::Status;
+use traewelling::status;
+use crate::traewelling::Traewelling;
 
 const OUT_DIR: &str = "out";
 
 #[tokio::main]
 async fn main() {
+    let config = load_config();
+
     if fs::try_exists(OUT_DIR).await.unwrap_or(false) {
         fs::remove_dir_all(OUT_DIR).await.unwrap();
     }
 
-    let bearer = env::var("TRAEWELLING_BEARER_TOKEN")
-        .expect("Expected `TRAEWELLING_BEARER_TOKEN` env variable");
-
-    let mut headers = header::HeaderMap::new();
-    headers.insert(
-        "Authorization",
-        header::HeaderValue::from_str(&bearer).unwrap(),
-    );
-    let client = Client::builder().default_headers(headers).build().unwrap();
-
-    let statuses: Vec<Status> = status::get_statuses(&client)
-        .await
-        .into_iter()
-        .filter(status::filter_status)
-        .collect();
-
-    println!("Filtered to {} statuses", statuses.len());
-    let data = polyline::get_polylines(&client, &statuses).await;
-    let data_str = serde_json::to_string(&data).unwrap();
-    fs::write("polylines.json", data_str.clone())
+    let traewelling = Traewelling::new_from_env();
+    let statuses = traewelling.get_statuses().await;
+    
+    let polylines = traewelling.get_polylines(&statuses).await;
+    let polylines_str = serde_json::to_string(&polylines).unwrap();
+    fs::write("polylines.json", polylines_str.clone())
         .await
         .expect("Unable to write file");
     println!("Wrote polylines.json");
 
-    build_html(data_str.as_str()).await;
+    build_html(polylines_str.as_str()).await;
 }
 
 async fn build_html(polylines: &str) {
@@ -51,4 +38,3 @@ async fn build_html(polylines: &str) {
         .await
         .unwrap();
 }
-

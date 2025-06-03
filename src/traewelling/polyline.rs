@@ -23,7 +23,7 @@ pub async fn get_polylines(client: &Client, statuses: &Vec<Status>) -> Vec<Value
 
 async fn get_polyline_page(client: &Client, url: String) -> Value {
     loop {
-        let response = crate::http::handle_request(client.get(url)).await;
+        let response = crate::traewelling::http::handle_request(client.get(url)).await;
 
         let json = response
             .text()
