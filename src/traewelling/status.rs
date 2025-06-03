@@ -1,6 +1,6 @@
 use reqwest::Client;
 use serde::Deserialize;
-use crate::http::handle_request;
+use crate::traewelling::http::handle_request;
 
 const STATUSES_URL: &str = "https://traewelling.de/api/v1/user/freya/statuses";
 
@@ -68,8 +68,8 @@ pub fn filter_status(status: &Status) -> bool {
     // See https://github.com/Traewelling/traewelling/blob/6193e1cec5347a16e90a56338abac4a9f977c28c/app/Enum/HafasTravelType.php#L18-L28
     match status.train.category.as_str() {
         "nationalExpress" | "national" | "regionalExp" | "regional" | "suburban" | "subway"
-        | "tram" => true,
-        "bus" | "ferry" | "taxi" | "plane" => false,
+        | "ferry" | "tram" => true,
+        "bus" | "taxi" | "plane" => false,
         _ => {
             println!("Got unexpected category in status {:?}", status);
             true
