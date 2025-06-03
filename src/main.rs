@@ -1,5 +1,6 @@
 mod config;
 mod traewelling;
+mod gpx_reader;
 
 use crate::config::load_config;
 use std::path::Path;
@@ -20,7 +21,9 @@ async fn main() {
     let traewelling = Traewelling::new_from_env();
     let statuses = traewelling.get_statuses().await;
     
-    let polylines = traewelling.get_polylines(&statuses).await;
+    let mut polylines = traewelling.get_polylines(&statuses).await;
+    polylines.extend(gpx_reader::read_polylines(&config));
+    
     let polylines_str = serde_json::to_string(&polylines).unwrap();
     fs::write("polylines.json", polylines_str.clone())
         .await

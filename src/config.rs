@@ -9,11 +9,6 @@ pub fn load_config() -> Config {
 
 #[derive(Serialize, Deserialize)]
 pub struct Config {
-    routes: Vec<Route>,
-}
-
-#[derive(Serialize, Deserialize)]
-pub struct Route {
-    pub identifier: String,
-    pub files: Vec<String>,
+    pub ignore: Vec<String>,
+    pub routes: Vec<String>
 }

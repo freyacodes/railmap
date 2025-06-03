@@ -1,1 +1,5 @@
+ignore:
+  - "EC Koebenhavn H <-> Hamburg Hbf"
+
 routes:
+  - "./gpx/ec/cph-hh.gpx"
