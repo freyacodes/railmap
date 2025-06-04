@@ -21,6 +21,13 @@ pub struct Status {
 #[derive(Deserialize, Debug)]
 pub struct Train {
     pub category: String,
+    pub origin: Stop,
+    pub destination: Stop
+}
+
+#[derive(Deserialize, Debug)]
+pub struct Stop {
+    pub name: String
 }
 
 #[derive(Deserialize, Debug)]
