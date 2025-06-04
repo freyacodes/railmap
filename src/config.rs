@@ -7,7 +7,7 @@ pub fn load_config() -> Config {
     serde_yml::from_str(&string).expect("Failed to parse config.yml")
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Clone)]
 pub struct Config {
     pub ignore: Vec<String>,
     pub routes: Vec<String>

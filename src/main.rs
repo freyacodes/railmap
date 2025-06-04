@@ -18,7 +18,7 @@ async fn main() {
         fs::remove_dir_all(OUT_DIR).await.unwrap();
     }
 
-    let traewelling = Traewelling::new_from_env();
+    let traewelling = Traewelling::new_from_env(config.clone());
     let statuses = traewelling.get_statuses().await;
     
     let mut polylines = traewelling.get_polylines(&statuses).await;
