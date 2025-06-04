@@ -52,9 +52,16 @@ ignore:
   - "Noerreport st <-> København H"
   - "Oesterport st <-> København H"
   - "Dybboelsbro st <-> Oesterport st"
+  - "Hannover Hbf <-> Hamburg Hbf"
+  - "Hamburg-Harburg <-> Hamburg Hbf"
+  - "Hamburg-Harburg <-> Hamburg-Altona"
+  - "Leer (Ostfriesl) <-> Bremen Hbf"
+  - "Groningen CS Hoofdstation <-> Leer (Ostfriesl)" # Not an actual train
+  - "Bremen Hbf <-> Hamburg Hbf"
 
 routes:
   - "./gpx/ice/hh-b.gpx"
+  - "./gpx/ice/hh-hannover.gpx"
   - "./gpx/x2/stockholm.gpx"
   - "./gpx/x2/stockholm-gothenburg.gpx"
   - "./gpx/x2/gothenburg-diverted.gpx"
@@ -66,6 +73,8 @@ routes:
   - "./gpx/re/altona-niebüll.gpx"
   - "./gpx/re/oslo.gpx"
   - "./gpx/re/stade.gpx"
+  - "./gpx/re/leer-bremen.gpx"
+  - "./gpx/re/bremen-hamburg.gpx"
   - "./gpx/rb/cph-malmö.gpx"
   - "./gpx/rb/neg1.gpx"
   - "./gpx/rb/neg2.gpx"
