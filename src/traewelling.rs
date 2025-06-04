@@ -52,7 +52,7 @@ impl Traewelling {
         if result {
             //println!("Ignoring {}", format!("{} <-> {}", status.train.origin.name, status.train.destination.name));
         } else {
-            println!("Accepting {}", format!("{} <-> {}", status.train.origin.name, status.train.destination.name));
+            println!("Accepting {}", format!("{} <-> {} - https://traewelling.de/status/{}", status.train.origin.name, status.train.destination.name, status.id));
         }
         
         result

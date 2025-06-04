@@ -60,16 +60,57 @@ ignore:
   - "Bremen Hbf <-> Hamburg Hbf"
   - "Berlin Hbf <-> Leipzig Hbf"
   - "Berlin Südkreuz <-> Leipzig Hbf"
+  - "Berlin Südkreuz <-> Frankfurt(Main)Hbf"
+  - "Wuppertal Hbf <-> Hannover Hbf"
+  - "Hamburg Hbf <-> Hamburg-Altona"
+  - "Hamburg Hbf <-> Würzburg Hbf"
+  - "Hamburg Hbf <-> Karlsruhe Hbf"
+  - "Hamburg Hbf <-> Pinneberg"
+  - "Würzburg Hbf <-> Aschaffenburg Hbf"
+  - "Aschaffenburg Hbf <-> Köln Messe/Deutz Gl.11-12"
+  - "Frankfurt(Main)Hbf <-> Aschaffenburg Hbf"
+  - "Köln Messe/Deutz <-> Frankfurt(Main)Hbf"
+  - "Wuppertal Hbf <-> Köln Messe/Deutz"
+  - "Frankfurt(Main)Hbf <-> Köln Hbf"
+  - "Karlsruhe Hbf <-> Köln Hbf"
+  - "Mannheim Hbf <-> Karlsruhe Hbf"
+  - "Frankfurt(Main)Hbf <-> Mannheim Hbf"
+  - "Karlsruhe Hbf <-> Frankfurt(Main)Hbf"
+  - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
+  - "3297018" # Another Berlin Mannheim
+  - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
+  - "4826446" # EC 8
+  - "4381295" # Deutz to Hamburg, already covered
+  - "4367102" # Köln to Dortmund
+  - "3656016" # ./gpx/ice/darmstadt-mannheim.gpx
+  - "3308080" # ./gpx/ice/stendal-uelzen.gpx"
+  - "3649643" # HH to Frankfurt duplicate
+  - "3555855" # ./gpx/ice/munich-würzburg.gpx
+  - "3284861" # HH to Mannheim again
+  - "2699465" # My first time on an ICE! Though it is a duplicate
 
 routes:
   - "./gpx/ice/hh-b.gpx"
   - "./gpx/ice/hh-hannover.gpx"
+  - "./gpx/ice/hh-hannover-2.gpx"
   - "./gpx/ice/berlin-leipzig.gpx"
   - "./gpx/ice/berlin-leipzig-alt.gpx"
+  - "./gpx/ice/leipzig-frankfurt.gpx"
+  - "./gpx/ice/berlin-mannheim-alt.gpx"
+  - "./gpx/ice/köln-dortmund.gpx"
+  - "./gpx/ice/wuppertal-hannover.gpx"
+  - "./gpx/ice/hamburg-würzburg.gpx"
+  - "./gpx/ice/kassel-stuttgart.gpx"
+  - "./gpx/ice/darmstadt-mannheim.gpx"
+  - "./gpx/ice/stendal-uelzen.gpx"
+  - "./gpx/ice/munich-würzburg.gpx"
+  - "./gpx/ice/würzburg-aschaffenburg.gpx"
+  - "./gpx/ice/frankfurt-karlsruhe-alt.gpx"
   - "./gpx/x2/stockholm.gpx"
   - "./gpx/x2/stockholm-gothenburg.gpx"
   - "./gpx/x2/gothenburg-diverted.gpx"
   - "./gpx/ec/cph-hh.gpx"
+  - "./gpx/ec/ec8.gpx"
   - "./gpx/ic/bramming-fredericia.gpx"
   - "./gpx/ic/fredericia-middelfart.gpx"
   - "./gpx/ic/over-roskilde.gpx"
@@ -80,6 +121,7 @@ routes:
   - "./gpx/re/leer-bremen.gpx"
   - "./gpx/re/bremen-hamburg.gpx"
   - "./gpx/re/roskilde-jyderup.gpx"
+  - "./gpx/re/hh-neumünster.gpx"
   - "./gpx/rb/cph-malmö.gpx"
   - "./gpx/rb/neg1.gpx"
   - "./gpx/rb/neg2.gpx"
