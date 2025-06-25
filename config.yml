@@ -119,6 +119,7 @@ routes:
   - "./gpx/ic/fredericia-middelfart.gpx"
   - "./gpx/ic/over-roskilde.gpx"
   - "./gpx/ic/aarhus.gpx"
+  - "./gpx/ic/karlsruhe-leipzig.gpx"
   - "./gpx/re/altona-niebüll.gpx"
   - "./gpx/re/oslo.gpx"
   - "./gpx/re/stade.gpx"
