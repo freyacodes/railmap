@@ -77,6 +77,8 @@ ignore:
   - "Frankfurt(Main)Hbf <-> Mannheim Hbf"
   - "Karlsruhe Hbf <-> Frankfurt(Main)Hbf"
   - "Karlsruhe Hbf <-> Leipzig Hbf"
+  - "Leipzig, Apelstr./Historischer Betriebshof <-> Leipzig, Hauptbahnhof/Westseite"
+  - "Leipzig, Apelstr./Historischer Betriebshof <-> Leipzig, Apelstr./Historischer Betriebshof"
   - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
   - "3297018" # Another Berlin Mannheim
   - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
@@ -136,3 +138,5 @@ routes:
   - "./gpx/s/hamburg-airport.gpx"
   - "./gpx/s/poppenbüttel.gpx"
   - "./gpx/tram/nice.gpx"
+  - "./gpx/special/KVV - Schlossgartenbahn (2,6km).gpx"
+  - "./gpx/special/LVB 21E - {Rundfahrt} (7.3km).gpx"
