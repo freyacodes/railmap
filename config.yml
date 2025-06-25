@@ -76,6 +76,7 @@ ignore:
   - "Mannheim Hbf <-> Karlsruhe Hbf"
   - "Frankfurt(Main)Hbf <-> Mannheim Hbf"
   - "Karlsruhe Hbf <-> Frankfurt(Main)Hbf"
+  - "Karlsruhe Hbf <-> Leipzig Hbf"
   - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
   - "3297018" # Another Berlin Mannheim
   - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
@@ -123,6 +124,7 @@ routes:
   - "./gpx/re/bremen-hamburg.gpx"
   - "./gpx/re/roskilde-jyderup.gpx"
   - "./gpx/re/hh-neumünster.gpx"
+  - "./gpx/rb/gransee-berlin.gpx"
   - "./gpx/rb/cph-malmö.gpx"
   - "./gpx/rb/neg1.gpx"
   - "./gpx/rb/neg2.gpx"
