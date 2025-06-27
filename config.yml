@@ -91,6 +91,8 @@ ignore:
   - "3555855" # ./gpx/ice/munich-würzburg.gpx
   - "3284861" # HH to Mannheim again
   - "2699465" # My first time on an ICE! Though it is a duplicate
+  - "5329722" # ICE Erfurt to Leipzig
+  - "5332553" # ICE Nürnberg to Munich
   - "5337653" # ICE Munich to Düsseldorf
 
 routes:
