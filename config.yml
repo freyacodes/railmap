@@ -87,6 +87,9 @@ ignore:
   - "Visp <-> Thun, Bahnhof"
   - "Thun, Bahnhof <-> Bern"
   - "Zürich HB <-> Bern"
+  - "Zürich HB <-> Basel SBB"
+  - "Zürich HB <-> Sargans"
+  - "Sargans <-> Innsbruck Hbf"
   - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
   - "3297018" # Another Berlin Mannheim
   - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
@@ -102,6 +105,7 @@ ignore:
   - "5329722" # ICE Erfurt to Leipzig
   - "5332553" # ICE Nürnberg to Munich
   - "5337653" # ICE Munich to Düsseldorf
+  - "3539448" # ICE to Basel SBB from Karlsruhe
 
 routes:
   - "./gpx/ice/hh-b.gpx"
@@ -122,9 +126,11 @@ routes:
   - "./gpx/ice/frankfurt-karlsruhe-alt.gpx"
   - "./gpx/ice/köln-frankfurt.gpx"
   - "./gpx/ice/munich-düsseldorf.gpx"
+  - "./gpx/ice/basel-sbb-zürich-hb.gpx"
   - "./gpx/x2/stockholm.gpx"
   - "./gpx/x2/stockholm-gothenburg.gpx"
   - "./gpx/x2/gothenburg-diverted.gpx"
+  - "./gpx/rj/sargans-innsbruck.gpx"
   - "./gpx/ec/cph-hh.gpx"
   - "./gpx/ec/ec8.gpx"
   - "./gpx/ec/ece-zürich-münchen.gpx"
@@ -137,6 +143,7 @@ routes:
   - "./gpx/ic/interlaken-ost-to-bern.gpx"
   - "./gpx/ic/visp-bern.gpx"
   - "./gpx/ic/zürich-bern.gpx"
+  - "./gpx/ic/zürich-sargans.gpx"
   - "./gpx/re/altona-niebüll.gpx"
   - "./gpx/re/oslo.gpx"
   - "./gpx/re/stade.gpx"
