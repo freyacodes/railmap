@@ -61,6 +61,7 @@ ignore:
   - "Berlin Hbf <-> Leipzig Hbf"
   - "Berlin Südkreuz <-> Leipzig Hbf"
   - "Berlin Südkreuz <-> Frankfurt(Main)Hbf"
+  - "Hamburg Hbf <-> Frankfurt(Main)Hbf"
   - "Wuppertal Hbf <-> Hannover Hbf"
   - "Hamburg Hbf <-> Hamburg-Altona"
   - "Hamburg Hbf <-> Würzburg Hbf"
@@ -90,6 +91,10 @@ ignore:
   - "Zürich HB <-> Basel SBB"
   - "Zürich HB <-> Sargans"
   - "Sargans <-> Innsbruck Hbf"
+  - "Toender st <-> Niebüll"
+  - "Hamburg Hbf <-> Niebüll"
+  - "Hamburg Hbf <-> Hannover Hbf"
+  - "Erfurt Hbf <-> Nürnberg Hbf"
   - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
   - "3297018" # Another Berlin Mannheim
   - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
