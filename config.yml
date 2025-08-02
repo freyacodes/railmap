@@ -107,6 +107,9 @@ ignore:
   - "Milano Centrale <-> Lugano"
   - "Zürich HB <-> Milano Centrale"
   - "Milano Centrale <-> Lugano"
+  - "Innsbruck Hbf <-> München Hbf"
+  - "Bruxelles Midi <-> Köln Hbf"
+  - "Aachen Hbf <-> Köln Hbf"
   - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
   - "3297018" # Another Berlin Mannheim
   - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
@@ -147,6 +150,7 @@ routes:
   - "./gpx/ice/basel-sbb-zürich-hb.gpx"
   - "./gpx/ice/erfurt-nürnberg.gpx"
   - "./gpx/ice/düsseldorf-arnhem.gpx"
+  - "./gpx/ice/köln-brussels.gpx"
   - "./gpx/x2/stockholm.gpx"
   - "./gpx/x2/stockholm-gothenburg.gpx"
   - "./gpx/x2/gothenburg-diverted.gpx"
@@ -155,6 +159,7 @@ routes:
   - "./gpx/ec/ec8.gpx"
   - "./gpx/ec/ece-zürich-münchen.gpx"
   - "./gpx/ec/zürich-milan.gpx"
+  - "./gpx/ec/innsbruck-münchen.gpx"
   - "./gpx/ir/luzern.gpx"
   - "./gpx/ic/bramming-fredericia.gpx"
   - "./gpx/ic/fredericia-middelfart.gpx"
