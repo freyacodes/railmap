@@ -183,6 +183,7 @@ routes:
   - "./gpx/ic/braunschweig-hannover.gpx"
   - "./gpx/ic/zürich-lausanne.gpx"
   - "./gpx/ic/geneva-lausanne.gpx"
+  - "./gpx/ic/sønderborg.gpx"
   - "./gpx/re/altona-niebüll.gpx"
   - "./gpx/re/oslo.gpx"
   - "./gpx/re/stade.gpx"
