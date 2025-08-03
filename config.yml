@@ -117,6 +117,9 @@ ignore:
   - "Korsør St. <-> Gelsted st"
   - "Gelsted st <-> Ejby st"
   - "Offenburg <-> Karlsruhe Hbf"
+  - "Koebenhavn Syd <-> Vigerslev Alle st"
+  - "København H <-> Slagelse st"
+  - "Roskilde st <-> København H"
   - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
   - "3297018" # Another Berlin Mannheim
   - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
@@ -199,7 +202,11 @@ routes:
   - "./gpx/s/frederikssund.gpx"
   - "./gpx/s/hamburg-airport.gpx"
   - "./gpx/s/poppenbüttel.gpx"
+  - "./gpx/s/copenhagen-f.gpx"
+  - "./gpx/metro/copenhagen-m1.gpx"
+  - "./gpx/metro/copenhagen-m2.gpx"
   - "./gpx/tram/nice.gpx"
   - "./gpx/special/KVV - Schlossgartenbahn (2,6km).gpx"
   - "./gpx/special/LVB 21E - {Rundfahrt} (7.3km).gpx"
   - "./gpx/special/panorama-express.gpx"
+  - "./gpx/special/copenhagen-freight.gpx"
