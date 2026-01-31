@@ -165,6 +165,7 @@ ignore:
   - "Konstanz, Bahnhof <-> Singen(Hohentwiel)"
   - "Weinfelden, Bahnhof <-> Konstanz, Bahnhof"
   - "Zürich HB <-> Weinfelden, Bahnhof"
+  - "Zürich HB <-> St. Gallen"
   - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
   - "3297018" # Another Berlin Mannheim
   - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
