@@ -166,6 +166,8 @@ ignore:
   - "Weinfelden, Bahnhof <-> Konstanz, Bahnhof"
   - "Zürich HB <-> Weinfelden, Bahnhof"
   - "Zürich HB <-> St. Gallen"
+  - "Schiphol (Airport) <-> Almere Centrum"
+  - "Almere Centrum <-> Rotterdam Centraal"
   - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
   - "3297018" # Another Berlin Mannheim
   - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
@@ -234,6 +236,7 @@ routes:
   - "./gpx/ic/bern-geneve.gpx"
   - "./gpx/ic/singen-stuttgart.gpx"
   - "./gpx/ic/zürich-weinfelden.gpx"
+  - "./gpx/ic/almere-rotterdam.gpx"
   - "./gpx/re/altona-niebüll.gpx"
   - "./gpx/re/oslo.gpx"
   - "./gpx/re/stade.gpx"
@@ -248,7 +251,6 @@ routes:
   - "./gpx/rb/odense-sygehus.gpx"
   - "./gpx/rb/cph-elsinore.gpx"
   - "./gpx/rb/gardemoen-drammen.gpx"
-  - "./gpx/rb/amsterdam-business.gpx"
   - "./gpx/rb/les-eaux-vives.gpx"
   - "./gpx/s/frederikssund.gpx"
   - "./gpx/s/hamburg-airport.gpx"
