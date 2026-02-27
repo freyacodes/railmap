@@ -259,6 +259,7 @@ routes:
   - "./gpx/metro/copenhagen-m1.gpx"
   - "./gpx/metro/copenhagen-m2.gpx"
   - "./gpx/tram/nice.gpx"
+  - "./gpx/ferry/rotterdam-watertaxi.gpx"
   - "./gpx/special/KVV - Schlossgartenbahn (2,6km).gpx"
   - "./gpx/special/LVB 21E - {Rundfahrt} (7.3km).gpx"
   - "./gpx/special/panorama-express.gpx"
