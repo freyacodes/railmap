@@ -273,3 +273,4 @@ routes:
   - "./gpx/special/LVB 21E - {Rundfahrt} (7.3km).gpx"
   - "./gpx/special/panorama-express.gpx"
   - "./gpx/special/copenhagen-freight.gpx"
+  - "./gpx/special/harwich-london-trip.gpx"
