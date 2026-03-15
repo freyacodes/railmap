@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="overpass-turbo"><metadata><desc>Filtered OSM data converted to GPX by overpass turbo</desc><copyright author="The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."/><time>2026-03-15T19:18:00Z</time></metadata><trk><name>Hoek van Holland - Harwich</name><desc>bdouble=yes
+bicycle=yes
+brand=Stena Line
+brand:wikidata=Q833903
+duration=07:30
+foot=yes
+from=Netherland
+goods=yes
+hgv=yes
+int_ref=E 30
+interval=12:00
+moped=yes
+motor_vehicle=yes
+motorcar=yes
+motorcycle=yes
+name=Hoek van Holland - Harwich
+name:en=Hook of Holland - Harwich
+name:nl=Hoek van Holland - Harwich
+operator=Stena Line B.V.
+operator:addr:country=NL
+route=ferry
+source:int_ref=https://www.mapillary.com/app/?pKey=1448298879307142&amp;focus=photo
+to=United Kingdom
+toll=yes
+trailer=yes
+vehicle=no
+website:GB=https://www.stenaline.co.uk/routes/harwich-hook-of-holland
+website:NL=https://www.stenaline.nl/routes/hoek-van-holland-harwich
+website:hgv=https://www.stenalinefreight.com/routes/hoek-van-holland-harwich/</desc><link href="http://osm.org/browse/way/121724962"/><trkseg><trkpt lat="51.9483765" lon="1.2526713"/><trkpt lat="51.948527" lon="1.2513081"/><trkpt lat="51.94881" lon="1.2507595"/><trkpt lat="51.949105" lon="1.2505193"/><trkpt lat="51.9494615" lon="1.2505282"/><trkpt lat="51.9497712" lon="1.2507466"/><trkpt lat="51.9500503" lon="1.2511768"/><trkpt lat="51.9502302" lon="1.2518209"/><trkpt lat="51.9503231" lon="1.2524244"/><trkpt lat="51.9503393" lon="1.2525294"/><trkpt lat="51.9503493" lon="1.2538982"/><trkpt lat="51.9524108" lon="1.2957507"/><trkpt lat="51.9523627" lon="1.2974215"/><trkpt lat="51.9521026" lon="1.2998396"/><trkpt lat="51.9516681" lon="1.3022031"/><trkpt lat="51.9510042" lon="1.3043577"/><trkpt lat="51.9500235" lon="1.3061477"/><trkpt lat="51.9482868" lon="1.3079045"/><trkpt lat="51.9470405" lon="1.3088327"/><trkpt lat="51.9440982" lon="1.3102249"/><trkpt lat="51.9410229" lon="1.311153"/><trkpt lat="51.9380188" lon="1.3115342"/><trkpt lat="51.9339518" lon="1.3114679"/><trkpt lat="51.9316014" lon="1.3115177"/><trkpt lat="51.9299356" lon="1.3122303"/><trkpt lat="51.9286479" lon="1.3131253"/><trkpt lat="51.9266549" lon="1.3159098"/><trkpt lat="51.9254284" lon="1.3182301"/><trkpt lat="51.924672" lon="1.3219427"/><trkpt lat="51.9244267" lon="1.3266166"/><trkpt lat="51.9245289" lon="1.3323015"/><trkpt lat="51.924948" lon="1.3403233"/><trkpt lat="51.9258066" lon="1.3513118"/><trkpt lat="51.9285457" lon="1.3717973"/><trkpt lat="51.9303444" lon="1.3913546"/><trkpt lat="51.9327971" lon="1.4381596"/><trkpt lat="51.9340643" lon="1.4559932"/><trkpt lat="51.9362715" lon="1.4728987"/><trkpt lat="51.9393779" lon="1.4946438"/><trkpt lat="51.9401953" lon="1.5042567"/><trkpt lat="51.9397457" lon="1.5175159"/><trkpt lat="51.9378656" lon="1.5281896"/><trkpt lat="51.9335329" lon="1.5433051"/><trkpt lat="51.9309167" lon="1.5489403"/><trkpt lat="51.9283413" lon="1.5517247"/><trkpt lat="51.9172815" lon="1.5594482"/><trkpt lat="51.9137852" lon="1.5614371"/><trkpt lat="51.9101045" lon="1.5626967"/><trkpt lat="51.906669" lon="1.562763"/><trkpt lat="51.9013107" lon="1.5620668"/><trkpt lat="51.8956857" lon="1.5608404"/><trkpt lat="51.8817125" lon="1.5601443"/><trkpt lat="51.8750005" lon="1.5603432"/><trkpt lat="51.8694337" lon="1.561868"/><trkpt lat="51.861983" lon="1.5649176"/><trkpt lat="51.8531796" lon="1.5704202"/><trkpt lat="51.8481426" lon="1.5746631"/><trkpt lat="51.8453314" lon="1.5804025"/><trkpt lat="51.8148031" lon="1.7595423"/><trkpt lat="51.8104442" lon="1.8601797"/><trkpt lat="51.8882913" lon="2.1291822"/><trkpt lat="51.9484846" lon="2.9159904"/><trkpt lat="52.0293673" lon="3.8943843"/><trkpt lat="52.0005879" lon="4.0162792"/><trkpt lat="51.9945922" lon="4.0408419"/><trkpt lat="51.9925677" lon="4.0496179"/><trkpt lat="51.9882777" lon="4.0681394"/><trkpt lat="51.9832031" lon="4.0898578"/><trkpt lat="51.9827502" lon="4.0918416"/><trkpt lat="51.9815892" lon="4.0970105"/><trkpt lat="51.9805846" lon="4.1013569"/><trkpt lat="51.9800358" lon="4.1036605"/><trkpt lat="51.9787154" lon="4.109071"/><trkpt lat="51.977926" lon="4.1121552"/><trkpt lat="51.9769244" lon="4.1159127"/><trkpt lat="51.975958" lon="4.1193948"/><trkpt lat="51.9751524" lon="4.1221275"/><trkpt lat="51.9730617" lon="4.1283137"/><trkpt lat="51.9725855" lon="4.1295874"/><trkpt lat="51.972387" lon="4.1301345"/><trkpt lat="51.9722828" lon="4.1305747"/><trkpt lat="51.9722415" lon="4.1308859"/><trkpt lat="51.972252" lon="4.1311083"/><trkpt lat="51.9723635" lon="4.1314736"/><trkpt lat="51.9725863" lon="4.1318453"/><trkpt lat="51.972879" lon="4.1319191"/><trkpt lat="51.9731648" lon="4.1317863"/><trkpt lat="51.9734436" lon="4.1313418"/></trkseg></trk></gpx>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="overpass-turbo"><metadata><desc>Filtered OSM data converted to GPX by overpass turbo</desc><copyright author="The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."/><time>2026-03-15T19:12:46Z</time></metadata><trk><name>Rostock (D) – Gedser (S)</name><desc>bicycle=yes
+bus=yes
+duration=02:00
+fee=yes
+foot=yes
+hgv=yes
+motor_vehicle=yes
+motorcar=yes
+name=Rostock (D) – Gedser (S)
+operator=Scandlines
+ref=E 55
+route=ferry
+seamark:ferry_route:category=free
+seamark:type=ferry_route
+source:duration=https://www.scandlines.com/departures/</desc><link href="http://osm.org/browse/way/1349018822"/><trkseg><trkpt lat="54.1526745" lon="12.1011265"/><trkpt lat="54.1537278" lon="12.1008168"/><trkpt lat="54.1559266" lon="12.100376"/><trkpt lat="54.1584838" lon="12.1009859"/><trkpt lat="54.1627027" lon="12.1026024"/><trkpt lat="54.1679283" lon="12.0996515"/><trkpt lat="54.1725064" lon="12.0971231"/><trkpt lat="54.1794741" lon="12.0933073"/><trkpt lat="54.1838719" lon="12.0907508"/><trkpt lat="54.1891911" lon="12.0879602"/><trkpt lat="54.1941508" lon="12.0852711"/><trkpt lat="54.1993647" lon="12.0823675"/><trkpt lat="54.2055355" lon="12.0787968"/><trkpt lat="54.2141514" lon="12.0731953"/><trkpt lat="54.2311055" lon="12.0637954"/><trkpt lat="54.2444448" lon="12.0562144"/><trkpt lat="54.25828" lon="12.0485947"/><trkpt lat="54.276681" lon="12.0359477"/><trkpt lat="54.2793323" lon="12.0341638"/><trkpt lat="54.2817839" lon="12.0325978"/><trkpt lat="54.284061" lon="12.031229"/><trkpt lat="54.2861887" lon="12.0300368"/><trkpt lat="54.2881921" lon="12.0290008"/><trkpt lat="54.2900964" lon="12.0281003"/><trkpt lat="54.2919267" lon="12.0273147"/><trkpt lat="54.2937079" lon="12.0266236"/><trkpt lat="54.2954653" lon="12.0260064"/><trkpt lat="54.297224" lon="12.0254424"/><trkpt lat="54.2990089" lon="12.0249111"/><trkpt lat="54.3008451" lon="12.0243921"/><trkpt lat="54.3027579" lon="12.0238646"/><trkpt lat="54.3047721" lon="12.0233081"/><trkpt lat="54.3069129" lon="12.0227022"/><trkpt lat="54.3092054" lon="12.0220261"/><trkpt lat="54.3116746" lon="12.0212594"/><trkpt lat="54.3143454" lon="12.0203815"/><trkpt lat="54.3172431" lon="12.0193718"/><trkpt lat="54.3203925" lon="12.0182097"/><trkpt lat="54.5239398" lon="11.9407747"/><trkpt lat="54.541529" lon="11.935721"/><trkpt lat="54.5491917" lon="11.93355"/><trkpt lat="54.55725" lon="11.9313417"/><trkpt lat="54.5653101" lon="11.9287677"/><trkpt lat="54.5711423" lon="11.9265383"/><trkpt lat="54.5721149" lon="11.9257732"/><trkpt lat="54.5727644" lon="11.9252622"/><trkpt lat="54.5737391" lon="11.9246324"/></trkseg></trk></gpx>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" version="1.1" creator="overpass-turbo"><metadata><desc>Filtered OSM data converted to GPX by overpass turbo</desc><copyright author="The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."/><time>2026-03-15T19:11:46Z</time></metadata><trk><name>Rødby (DK) - Puttgarden (D)</name><desc>bicycle=yes
+bus=yes
+duration=0:45
+foot=yes
+hgv=yes
+motor_vehicle=yes
+motorcar=yes
+name=Rødby (DK) - Puttgarden (D)
+operator=Scandlines GmbH
+route=ferry
+toll=yes
+website=https://www.scandlines.com/
+wheelchair=yes</desc><link href="http://osm.org/browse/way/1280194263"/><trkseg><trkpt lat="54.5025487" lon="11.2280161"/><trkpt lat="54.5027038" lon="11.2281299"/><trkpt lat="54.5028164" lon="11.2282207"/><trkpt lat="54.5052119" lon="11.2296581"/><trkpt lat="54.5070931" lon="11.2318253"/><trkpt lat="54.6245558" lon="11.3064337"/><trkpt lat="54.6380383" lon="11.3179886"/><trkpt lat="54.6456066" lon="11.3353586"/><trkpt lat="54.651336" lon="11.3462947"/><trkpt lat="54.6543072" lon="11.3508124"/></trkseg></trk></gpx>
