@@ -172,6 +172,7 @@ ignore:
   - "York <-> Edinburgh"
   - "Newton-le-Willows <-> Leeds"
   - "Leeds <-> York"
+  - "München Hbf <-> Regensburg Hbf"
   - "4589983" # ./gpx/ice/berlin-mannheim-alt.gpx
   - "3297018" # Another Berlin Mannheim
   - "3667944" # ./gpx/ice/kassel-stuttgart.gpx
@@ -189,6 +190,7 @@ ignore:
   - "5337653" # ICE Munich to Düsseldorf
   - "3539448" # ICE to Basel SBB from Karlsruhe
   - "5551880" # ICE from Hamburg to München via Berlin
+  - "7293318" # NJ Regensburg-Harburg
 
 routes:
   - "./gpx/ice/hh-b.gpx"
@@ -274,3 +276,4 @@ routes:
   - "./gpx/special/panorama-express.gpx"
   - "./gpx/special/copenhagen-freight.gpx"
   - "./gpx/special/harwich-london-trip.gpx"
+  - "./gpx/special/münchen-regensburg-nürnberg.gpx" # RE followed by NJ
